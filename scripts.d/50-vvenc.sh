@@ -5,6 +5,7 @@ SCRIPT_COMMIT="7cf1e5ffc5aeb33b81fa9401df9fd53ef1dae6d1"
 
 ffbuild_enabled() {
     [[ $TARGET != *32 ]] || return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     (( $(ffbuild_ffver) > 700 )) || return -1
     return 0
 }
