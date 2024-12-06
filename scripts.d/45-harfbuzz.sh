@@ -41,5 +41,5 @@ ffbuild_dockerbuild() {
 }
 
 ffbuild_configure() {
-    
+    return 0
 }
