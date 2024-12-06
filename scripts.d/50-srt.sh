@@ -4,6 +4,7 @@ SCRIPT_REPO="https://github.com/Haivision/srt.git"
 SCRIPT_COMMIT="5f16494f584e52b08a5dcdc55fe891d01d02f3a4"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -23,5 +24,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-libsrt
 }
