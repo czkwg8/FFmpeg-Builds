@@ -5,6 +5,7 @@ SCRIPT_COMMIT="aa67c95b9e486884a6d3ee8b0c91207d8c2b0551"
 
 ffbuild_enabled() {
     # pkg-config check is currently only available in master
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     [[ $ADDINS_STR == *5.0* ]] && return -1
     [[ $ADDINS_STR == *5.1* ]] && return -1
