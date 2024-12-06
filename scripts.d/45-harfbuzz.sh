@@ -42,5 +42,6 @@ ffbuild_dockerbuild() {
 
 ffbuild_configure() {
     (( $(ffbuild_ffver) > 600 )) || return 0
+    [[ $VARIANT == *4.2* ]] && return 0
     echo --enable-libharfbuzz
 }
