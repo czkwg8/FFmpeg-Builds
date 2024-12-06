@@ -5,6 +5,7 @@ SCRIPT_COMMIT="5f6bd8a1e753c8f63a3fd8b36894d6968b808a6d"
 
 ffbuild_enabled() {
     [[ $TARGET == *arm64 ]] && return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     [[ $ADDINS_STR == *5.0* ]] && return -1
     [[ $ADDINS_STR == *5.1* ]] && return -1
@@ -31,6 +32,7 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     [[ $ADDINS_STR == *4.4* ]] && return 0
     [[ $ADDINS_STR == *5.0* ]] && return 0
     [[ $ADDINS_STR == *5.1* ]] && return 0
