@@ -5,6 +5,7 @@ SCRIPT_COMMIT="v1.4.312"
 SCRIPT_TAGFILTER="v?.*.*"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     return 0
 }

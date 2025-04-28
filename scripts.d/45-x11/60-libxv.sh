@@ -5,6 +5,7 @@ SCRIPT_COMMIT="f34c717e9af0b1618699f4cf2f9aed277085c880"
 
 ffbuild_enabled() {
     [[ $TARGET != linux* ]] && return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     return 0
 }

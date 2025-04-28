@@ -4,6 +4,7 @@ SCRIPT_REPO="https://github.com/xqq/libaribcaption.git"
 SCRIPT_COMMIT="27cf3cab26084d636905335d92c375ecbc3633ea"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     [[ $ADDINS_STR == *5.0* ]] && return -1
     [[ $ADDINS_STR == *5.1* ]] && return -1
@@ -32,6 +33,7 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     [[ $ADDINS_STR == *4.4* ]] && return 0
     [[ $ADDINS_STR == *5.0* ]] && return 0
     [[ $ADDINS_STR == *5.1* ]] && return 0

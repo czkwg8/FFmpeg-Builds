@@ -5,6 +5,7 @@ SCRIPT_COMMIT="3d288d95a7f4cc0347e4daf8bc65d2336732754f"
 
 ffbuild_enabled() {
     [[ $VARIANT == lgpl* ]] && return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     [[ $ADDINS_STR == *4.4* ]] && return -1
     return 0
 }
