@@ -4,6 +4,7 @@ SCRIPT_REPO="https://gitlab.com/libssh/libssh-mirror.git"
 SCRIPT_COMMIT="f3b389d112da4a9d580cfd45a93d4d0961886149"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -32,5 +33,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-libssh
 }
