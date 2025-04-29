@@ -5,6 +5,7 @@ SCRIPT_COMMIT="38879ab5a5b1587264ae2cbba9df43dc9157da2d"
 
 ffbuild_enabled() {
     [[ $TARGET == win32 ]] && return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -46,5 +47,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-librav1e
 }
