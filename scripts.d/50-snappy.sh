@@ -4,6 +4,7 @@ SCRIPT_REPO="https://github.com/google/snappy.git"
 SCRIPT_COMMIT="6af9287fbdb913f0794d0148c6aa43b58e63c8e3"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -22,5 +23,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-libsnappy
 }

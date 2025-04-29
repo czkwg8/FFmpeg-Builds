@@ -4,6 +4,7 @@ SCRIPT_REPO="https://github.com/njh/twolame.git"
 SCRIPT_COMMIT="90b694b6125dbe23a346bd5607a7fb63ad2785dc"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -40,6 +41,7 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-libtwolame
 }
 
