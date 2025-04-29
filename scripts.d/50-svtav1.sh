@@ -5,6 +5,7 @@ SCRIPT_COMMIT="6ac3dfd9a4e6c5650ffbfecf409fbbd722ddaa2e"
 
 ffbuild_enabled() {
     [[ $TARGET == win32 ]] && return -1
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     (( $(ffbuild_ffver) > 700 )) || return -1
     return 0
 }
@@ -26,5 +27,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-libsvtav1
 }
