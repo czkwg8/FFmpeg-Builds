@@ -4,6 +4,7 @@ SCRIPT_REPO="https://code.videolan.org/rist/librist.git"
 SCRIPT_COMMIT="af5d2041fbc4da5faa5844d5ef8fba9d4b2a1864"
 
 ffbuild_enabled() {
+    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -45,5 +46,6 @@ ffbuild_configure() {
 }
 
 ffbuild_unconfigure() {
+    [[ $ADDINS_STR == *4.2* ]] && return 0
     echo --disable-librist
 }
