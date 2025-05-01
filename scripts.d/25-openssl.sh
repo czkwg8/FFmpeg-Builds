@@ -5,7 +5,6 @@ SCRIPT_COMMIT="openssl-3.2.4"
 SCRIPT_TAGFILTER="openssl-3.2.*"
 
 ffbuild_enabled() {
-    [[ $ADDINS_STR == *4.2* ]] && return -1
     return 0
 }
 
@@ -95,6 +94,5 @@ EOF
 
 ffbuild_configure() {
     [[ $TARGET == win* ]] && return 0
-    [[ $ADDINS_STR == *4.2* ]] && return 0
-    echo --enable-openssl
+    echo --enable-nonfree --enable-openssl 
 }
